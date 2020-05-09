@@ -159,22 +159,117 @@ Maven
 Gradle
 ------
 
-Virtualization
---------------
 
-Vagrant
--------
 
-Docker
-------
+Virtualization / Vagrant
+------------------------
 
+Docker / Containers
+------------------
+
+### What are containers?
+Containers are environments that isolate memory, filesystem and network resources. They are used as an alternative to virtual machines because these are lighter. These can be set up in a single host and share the operating system of the host. Docker is a solution allows to create containers.
+
+- **Docker image**: A Docker image is a template used to create a docker container. You can create or take an existing image and use it to instanciate a container.
+
+- **Docker container**: A Docker container is the runnable instance of an image. You can create, stop, delete containers. You can also configure the network of a container or attach storage and
+also create new images based on a running container. When a container is removed,
+all changes made to it are lost.
+
+### How to install Docker? 
+
+You can install and use Docker in several ways (for all, access
+https://www.docker.com):
+
+**Docker Desktop** - For running Docker in MacOS and Windows machines. See
+https://www.docker.com/products/docker-desktop. This requires Hyper-v on
+Windows
+
+**Docker Toolbox** - For some Windows systems that do not support Hyper-v (i.e.,
+Home editions) or have Hyper-v disabled. Docker Toolbox will run Docker server
+inside a Virtual Box VM. See https://docs.docker.com/toolbox/overview/
+
+**Docker Engine for Linux** - Install Docker on a machine with Linux or on a VM with
+Linux. See https://hub.docker.com/search?q=&type=edition&offering=
+community&operating_system=linux
+
+
+### Docker commands
+
+**Docker information:**
+
+Command: `docker info`
+
+**List local docker images:**
+
+Command: `docker images`
+
+**Get an image from Docker Hub:**
+
+Command Template: `docker pull [image]`
+
+Command Example: `docker pull httpd:2.4`
+
+**Start a docker container:**
+
+Command Template: `docker run [image]`
+
+Command Example: `docker run –d httpd`
+
+**List running containers:**
+
+Command: `docker ps`
+
+**Run a command on the container:**
+
+Command Template: `docker exec -it [container ID] [command]`
+
+Command Example: `docker exec -it 8e32ef0aa1d5 bash`
+
+**Stop a running container:**
+
+Command Template: `docker stop [container ID]`
+
+Command Example: `docker stop 8e32ef0aa1d5`
+
+**Remove a container:**
+
+Command Template: `docker rm [container ID]`
+
+Command Example: `docker rm 8e32ef0aa1d5`
+
+**Remove an image:**
+
+Command Template:`docker rmi [image]`
+
+Command Example: `docker rmi hello-world`
+
+
+A complete (and common) way of using docker run:
+
+- sudo docker run --name [container name] -i -t [image] [command] [arguments]
+- -i and –t setups an interactive session (attaches stdin and stdout to a terminal)
+- [container name] is the name of the container that we can use instead of the ID
+- [image] is the image of the container
+- [command] is a command to be run on the container once it is started
+- [arguments] is a list of command arguments
+  
+
+Example:
+
+- docker run --name my-ubuntu-container -i -t ubuntu /bin/bash
+- Starts an a shell (/bin/bash) on a container named my-hello-world-container, using
+the hello-world image
+
+- To stop the container:
+`docker stop my-ubuntu-container`
 
 
 
  
 
 
-
+----------------------------------------------------------------------------------------------
 
 UTILS
 
