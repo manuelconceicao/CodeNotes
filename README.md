@@ -1,2 +1,2 @@
 # CodeNotes
-Study notes for CS
+Study notes for Switch
