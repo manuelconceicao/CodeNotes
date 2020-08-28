@@ -1,5 +1,31 @@
 # Software Introduction
 
+[TOC]
+
+- [Software Introduction](#software-introduction)
+  - [What are some considerations to have with software?](#what-are-some-considerations-to-have-with-software)
+  - [What are the phases of software development?](#what-are-the-phases-of-software-development)
+  - [How to assess requirements?](#how-to-assess-requirements)
+  - [What is OO Analisys?](#what-is-oo-analisys)
+  - [What is Domain Model?](#what-is-domain-model)
+  - [How to identify conceptual classes?](#how-to-identify-conceptual-classes)
+  - [How to identify associations?](#how-to-identify-associations)
+  - [How to identify attributes?](#how-to-identify-attributes)
+  - [What is OO Design?](#what-is-oo-design)
+  - [What is Responsability-Driven Design (RDD)?](#what-is-responsability-driven-design-rdd)
+  - [What is General Responsability Assignment Software Patterns (GRASP) ?](#what-is-general-responsability-assignment-software-patterns-grasp-)
+    - [Information expert principle](#information-expert-principle)
+    - [Creator principle](#creator-principle)
+    - [Controller principle](#controller-principle)
+    - [Low Coupling principle](#low-coupling-principle)
+    - [High Coesion principle](#high-coesion-principle)
+    - [Polymorphism principle](#polymorphism-principle)
+    - [Indirection principle](#indirection-principle)
+    - [Pure Fabrication principle](#pure-fabrication-principle)
+    - [Protected Variations principle](#protected-variations-principle)
+- [Sources](#sources)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 [Sources](#sources)
 
@@ -159,9 +185,32 @@ e.g.
 
 [Back to top](#software-introduction)
 
-## What is General Responsability Assignement Software Patterns (GRASP) ?
+## What is General Responsability Assignment Software Patterns (GRASP) ?
 
-pick up on page 54!!!!!
+Grasp are patterns/principles for OO Design. They intend to aid the decision making process of responsability attribution when designing OO software.
+
+Grasp patterns:
+
+### Information expert principle
+
+Problem: What is the general principle to 
+
+### Creator principle
+
+### Controller principle
+
+### Low Coupling principle
+
+### High Coesion principle
+
+### Polymorphism principle
+
+### Indirection principle
+
+### Pure Fabrication principle
+
+### Protected Variations principle
+
 
 ---
 
