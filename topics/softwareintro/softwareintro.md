@@ -1,6 +1,6 @@
-# Software Introduction
+[Go to wiki](./../../README.md)
 
-[TOC]
+# Software Introduction
 
 - [Software Introduction](#software-introduction)
   - [What are some considerations to have with software?](#what-are-some-considerations-to-have-with-software)
@@ -27,7 +27,7 @@
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
-[Sources](#sources)
+
 
 ## What are some considerations to have with software?
 
@@ -193,9 +193,42 @@ Grasp patterns:
 
 ### Information expert principle
 
-Problem: What is the general principle to 
+*Problem*: What is the general principle to that attributes responsability to objects?
+
+*Solution*: Attribute responsability to the *information expert*
+
+The *information expert* is the class that **contains** all the **necessary information to perform that responsability**.
+Usually, the information is distributed along multiple classe, that makes interaction/colaboration necessary between various object through messages.
+
+*Disadvantages*: The use of the *information expert* principle can **sometimes lead to high copling and low coesion** problems because of the necessary colaboration between multiple classes.
+
+e.g. Exhibition responsability:
+
+![Exhibition responsability](./images/exhibitionresponsability.png)
+
+[Back to top](#software-introduction)
 
 ### Creator principle
+
+*Problem*: Who should be responsible for creating object os a class?
+
+*Solution*: Class *B* should have the responsability to create instances of class *A* in the following situations:
+
+- *B* contains or aggregates objects of class *A*
+- *B* registers instances of class *A*
+- *B* has the data used to initialize *A*
+- *B* is directly related to *A*
+
+If more than one condition applies, the first condition should be chosen "*B* contains or aggregates objects of class *A*".
+
+The creator pattern looks to attribute the responsability to create an object. It looks for relationships of *aggregation*, *composition* and *register*. The chosen creator should have all the necessary information to create the object. We should be aware that relationship between creator and created implies a highger coupling between those two classes. 
+
+*Disadvantages*: Sometimes the creation of objects can be very complex. In that scenery it might be mode advantageous to delegate that responsability to other classes (e.g. *Factory*).
+
+e.g. of Creator Pattern in a Exhibition:
+Following the creator pattern, the class *Exhibition* should have the responsability to create *Organizer* because the *Exhibition* contains or aggregates *Organizer*. The class *Exhibition* should contain a method *addOrganizer(user)*.
+
+[Back to top](#software-introduction)
 
 ### Controller principle
 
@@ -217,14 +250,12 @@ Problem: What is the general principle to
 # Sources
 PP ESOFT 2015-2016 Requisitos, analise e design (Switch)
 
----
-
 [Back to top](#software-introduction)
 
 ---
 
 [Go to wiki](./../../README.md)
 
----
+
 
 
