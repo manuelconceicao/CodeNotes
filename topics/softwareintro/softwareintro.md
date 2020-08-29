@@ -24,6 +24,7 @@
     - [Pure Fabrication principle](#pure-fabrication-principle)
     - [Protected Variations principle](#protected-variations-principle)
 - [Sources](#sources)
+- [References](#references)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
@@ -187,7 +188,7 @@ e.g.
 
 ## What is General Responsability Assignment Software Patterns (GRASP) ?
 
-Grasp are patterns/principles for OO Design. They intend to aid the decision making process of responsability attribution when designing OO software.
+*GRASP* are patterns/principles for OO Design. They intend to aid and guide the decision making process of responsability attribution when designing OO software. *GRASP* principles promote *modularity*, *reuse* and *maintenance*.
 
 Grasp patterns:
 
@@ -232,6 +233,34 @@ Following the creator pattern, the class *Exhibition* should have the responsabi
 
 ### Controller principle
 
+*Problem*: Who should be responsible for answering an input event in the system, generated bu the *UI* (User Interface)?
+
+*UI* can generate events through:
+- *UI* command line;
+- *UI* graphic.
+
+**Controller** is the first object after the *UI* that is responsible for receiving or treat a system operation.
+
+*Solution*: Attribute the responsability to one of the following classes:
+- A class that represents the global system, a device or susystem(*facade controller*).
+- A class that represents a *use case* in wich the event occurs.
+
+![Controller: Facade vs UseCase Handler](./images/facadevsuchandler.png)
+
+How to choose between *Facade* and *Use Case Controllers*?
+
+**Facade Controller** is better when there are few events in the system.
+
+**Use Case Controller** is better when there are many events because the *Facade Controller* would get too extensive and with too much responsability.
+
+The use of controllers allow for better reuse. The domain layer can be used with different interfaces. It also gives more control over the sequence of events and over the state of a session.
+
+A controller should delegate to other objects. It should coordenate or control the activity but it should not do processing. System operations should be treated in the domain layer by controller and not int the *UI* layer by *GUI* objects. *UI* should not be directly connected to domain classes.
+
+![User Case Controller](./images/uccontroller.png)
+
+[Back to top](#software-introduction)
+
 ### Low Coupling principle
 
 ### High Coesion principle
@@ -242,17 +271,49 @@ Following the creator pattern, the class *Exhibition* should have the responsabi
 
 ### Pure Fabrication principle
 
+*Problem*: What objecdt should have responsability, when trying to achieve *high cohesion* and *low coupling* but other patterns (e.g. *information expert*) are not appropriate. 
+
+*Solution*: Give the responsability to an *artificial* class, for convenience, following the pattern *Pure Fabrication*. It is a class that does not represent a domains concept but amasses a coherent group of responsabilities that are not appropriate to give to domain classes.
+
+An example to illustrate the need for a *pure fabrication*:
+
+In an exhibition app, what class should be responsible for saving data of an exhibition? According to *information expert* patterm the *Exhibition* class should be responsible because it contains all the necessary information to be saved. **However**... Putting that responsability under the Exhibition class would lead to a *higher coupling* between classes and lower the chaces of reuse because persistency would be tied to the *Exhibition* class.
+
+The solution to this problem is to *decouple* the persistency from the *Exhibition* class and create a class that has the responsability to save objects *PersistentStorage*.
+
+**END OF PP1!!! Go to PP2!!!**
+
+[Back to top](#software-introduction)
+
 ### Protected Variations principle
 
 
 ---
 
 # Sources
-PP ESOFT 2015-2016 Requisitos, analise e design (Switch)
+
+- PP ESOFT 2015-2016 Requisitos, analise e design (Switch)
 
 [Back to top](#software-introduction)
 
----
+# References
+
+- http://www.dcs.bbk.ac.uk/~niki/SoftwareEngineer
+ing.htm
+
+- http://www.cse.lehigh.edu/~glennb/oose/oose.htm
+Rational Unified Process: Best Practices for
+Software Development Teams; Rational Software
+White Paper; TP026B, Ver 11/01.
+
+- Rational Unified Process:
+http://www.ts.mah.se/RUP/RationalUnifiedProce
+ss/index.htm
+
+- Applying UML and Patterns; Craig Larman; (2nd
+ed.); 2002.
+
+[Back to top](#software-introduction)
 
 [Go to wiki](./../../README.md)
 
