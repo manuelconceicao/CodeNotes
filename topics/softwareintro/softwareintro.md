@@ -23,6 +23,7 @@
     - [Indirection principle](#indirection-principle)
     - [Pure Fabrication principle](#pure-fabrication-principle)
     - [Protected Variations principle](#protected-variations-principle)
+  - [What is Modularity?](#what-is-modularity)
 - [Sources](#sources)
 - [References](#references)
 
@@ -194,9 +195,9 @@ Grasp patterns:
 
 ### Information expert principle
 
-*Problem*: What is the general principle to that attributes responsability to objects?
+**Problem**: What is the general principle to that attributes responsability to objects?
 
-*Solution*: Attribute responsability to the *information expert*
+**Solution**: Attribute responsability to the *information expert*
 
 The *information expert* is the class that **contains** all the **necessary information to perform that responsability**.
 Usually, the information is distributed along multiple classe, that makes interaction/colaboration necessary between various object through messages.
@@ -211,9 +212,9 @@ e.g. Exhibition responsability:
 
 ### Creator principle
 
-*Problem*: Who should be responsible for creating object os a class?
+**Problem**: Who should be responsible for creating object os a class?
 
-*Solution*: Class *B* should have the responsability to create instances of class *A* in the following situations:
+**Solution**: Class *B* should have the responsability to create instances of class *A* in the following situations:
 
 - *B* contains or aggregates objects of class *A*
 - *B* registers instances of class *A*
@@ -233,7 +234,7 @@ Following the creator pattern, the class *Exhibition* should have the responsabi
 
 ### Controller principle
 
-*Problem*: Who should be responsible for answering an input event in the system, generated bu the *UI* (User Interface)?
+**Problem**: Who should be responsible for answering an input event in the system, generated bu the *UI* (User Interface)?
 
 *UI* can generate events through:
 - *UI* command line;
@@ -241,7 +242,7 @@ Following the creator pattern, the class *Exhibition* should have the responsabi
 
 **Controller** is the first object after the *UI* that is responsible for receiving or treat a system operation.
 
-*Solution*: Attribute the responsability to one of the following classes:
+**Solution**: Attribute the responsability to one of the following classes:
 - A class that represents the global system, a device or susystem(*facade controller*).
 - A class that represents a *use case* in wich the event occurs.
 
@@ -263,36 +264,129 @@ A controller should delegate to other objects. It should coordenate or control t
 
 ### Low Coupling principle
 
+**Problem**: How to achieve low dependency, low impact to changes and maximize reuse between classes?
+
+Coupling is a measure of how and element ir connected/intertwined, knows, depends on another element. A class with *high coupling* depends on other classes. A class with *low coupling* allows for a more independent class design and reduces the impact of changes made.
+
+A class with **high coupling** is:
+- Difficult to undertand;
+- Forces changes due to changes in intertwined classes.
+- Harder to reuse.
+
+A class with **low coupling** is:
+- Easier to understand;
+- Easier to change;
+- Easier to reuse.
+
+**Solution**: Give responsability in a way that keeps coupling low.
+
+In a OO programming language there can be the following kinds of connections:
+- *TypeX* has an association (e.g. reference) with and instance *TypeY*;
+- *TypeX* has a method that references an instance *TypeY*;
+- *TypeX* calls services of an object *TypeY*;
+- *TypeX* is a subclass, directly or indirectly, of *TypeY*;
+- *TypeX* implements and interface *TypeY*.
+
+**PP page 15**
+
+
+[Back to top](#software-introduction)
+
 ### High Coesion principle
+
+**Problem**: How to keep object with cohere functionalities and easy to comprehend? 
+
+*Cohesion* is a measure for the responsability given to an element. A highly cohese class usually had a restrict number of operations and cooperate or delegate with other classes to solve more complex tasks.
+
+A class with **low cohesion** is:
+- Hard to undertand;
+- Hard to reuse;
+- Hard to maintain;
+- Dependent on other classes.
+
+A class with **high cohesion** is:
+- Easier to understand the design behind it;
+- Easier to maintain and improve;
+- Low coupling is suported;
+- Reuse if favored because high cohesion allows for reuse of a very specific functionality.
+
+**Solution**: Give responsability in a way that cohesion and cooperation between functionalities is high. Delegate responsabilities.
+
+
+[Back to top](#software-introduction)
 
 ### Polymorphism principle
 
+**Problem**:
+
+**Solution**:
+
+**Pag 22**
+
+[Back to top](#software-introduction)
+
 ### Indirection principle
+
+
+[Back to top](#software-introduction)
 
 ### Pure Fabrication principle
 
-*Problem*: What objecdt should have responsability, when trying to achieve *high cohesion* and *low coupling* but other patterns (e.g. *information expert*) are not appropriate. 
+**Problem**: What object should have responsability, when trying to achieve *high cohesion* and *low coupling* but other patterns (e.g. *information expert*) are not appropriate?
 
-*Solution*: Give the responsability to an *artificial* class, for convenience, following the pattern *Pure Fabrication*. It is a class that does not represent a domains concept but amasses a coherent group of responsabilities that are not appropriate to give to domain classes.
+**Solution**: Give the responsability to an "artificial" class, for convenience, following the pattern *Pure Fabrication*. It is a class that does not represent a domains concept but amasses a coherent group of responsabilities that are not appropriate to give to domain classes.
 
 An example to illustrate the need for a *pure fabrication*:
 
-In an exhibition app, what class should be responsible for saving data of an exhibition? According to *information expert* patterm the *Exhibition* class should be responsible because it contains all the necessary information to be saved. **However**... Putting that responsability under the Exhibition class would lead to a *higher coupling* between classes and lower the chaces of reuse because persistency would be tied to the *Exhibition* class.
+In an exhibition app, what class should be responsible for saving data of an exhibition? According to *information expert* pattern the *Exhibition* class should be responsible because it contains all the necessary information to be saved. However... Putting that responsability under the Exhibition class would lead to a *higher coupling* between classes and lower the chaces of reuse because persistency would be tied to the *Exhibition* class.
 
-The solution to this problem is to *decouple* the persistency from the *Exhibition* class and create a class that has the responsability to save objects *PersistentStorage*.
+The solution to this problem is to decouple the persistency from the *Exhibition* class and create a class that has the responsability to save objects *PersistentStorage*.
 
-**END OF PP1!!! Go to PP2!!!**
+
 
 [Back to top](#software-introduction)
 
 ### Protected Variations principle
 
+**Problem**: How to make objects, component and systems in a way that does not have an undesirable impact in other elements?
+
+**Solution**: Identify predictable variation points. Give responsabilities to create a stable interface.
+
+e.g. car vs tire;
+Event Center vs Assignement algorithms;
+Different attribution algorithms.
+
+The *point of variation* - also called *instability point* - is where different API and interfaces should exist for those services. The interfaces colaborate with a stable interface. Different implementations hide the variations of those algorithms.
+
+e.g. attribute(Event e)
+
+**VER MELHOR O QUE É PROTECTED VARIATIONS. NÃO PERCEBI MUITO BEM**
+
+[Back to top](#software-introduction)
+
+
+## What is Modularity?
+
+Modularity is the property of a system to be **decomposed** into a set of cohere, low coupling, modules. **High cohesion** and **low coupling** promote modularity. 
+
+e.g. car vs tire
+
+**Low modularity** is usually a sign of bad design because low modularity promotes:
+
+- *Rigidity*: It is difficult to make changes because there are too many dependent parts of the system.
+- *Fragility*: When changes are made it is difficult to antecipate behaviour.
+- *Immutability*: It is hard to reuse for another application because it is too dependent of the original app.
+
+
+
+[Back to top](#software-introduction)
 
 ---
 
 # Sources
 
 - PP ESOFT 2015-2016 Requisitos, analise e design (Switch)
+- PP ESOFT 2016-2017 Design OO (T) IT2 (Switch)
 
 [Back to top](#software-introduction)
 
