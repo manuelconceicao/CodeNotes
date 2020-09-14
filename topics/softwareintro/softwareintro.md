@@ -323,8 +323,60 @@ A class with **high cohesion** is:
 
 e.g. How to support multiple algorithms for applications? The application should be able to integrrate various types of algorithms for applications. The integration should be done with the least amount possible of design in the software application (modularity). Various classes are created that implement the same interface (IAlgorithmAttribution). The implementation of each method *Attribution(Event)* will be different. 
 
-![Algorithm Attribution class diagram](.images/algorithmattribution.png)
+![Algorithm Attribution class diagram](images/algorithmattribution.png)
 
+**Code**
+
+```
+public static void main(String[] args)
+{
+// ...
+PintaObjeto(objeto);
+//...
+}
+private void PintaObjeto(Objeto o) {
+if (o instanceof Carro)
+{
+PintaCarro((Carro) o);
+} else if (o instanceof Mesa)
+{
+PintaMesa((Mesa) o);
+}
+}
+private void PintaCarro(Carro o) {
+//...
+}
+private void PintaMesa(Mesa m) {
+//...
+}
+```
+
+```
+public static void main(String[] args) {
+Mesa m = new Mesa();
+Pinta(m);
+Carro c = new Carro();
+Pinta(c);
+}
+private void Pinta(Pintável p) {
+p.pinta();
+}
+interface Pintável {
+public void pinta();
+}
+class Carro implements Pintável {
+public void pinta() {
+// ...
+}
+}
+class Mesa implements Pintável {
+public void pinta() {
+//...
+}
+}
+```
+
+**pag 27!!!!**
 
 
 [Back to top](#software-introduction)
