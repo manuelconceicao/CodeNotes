@@ -317,11 +317,15 @@ A class with **high cohesion** is:
 
 ### Polymorphism principle
 
-**Problem**:
+**Problem**: How to use alternatives based on type (classes)? How to build replaceable software components?
 
-**Solution**:
+**Solution**: When alternatives or behaviours change according to type, polymorphic operations should be used. Polymorphism states that polymorphic operations should be used instead of decisions based on type.
 
-**Pag 22**
+e.g. How to support multiple algorithms for applications? The application should be able to integrrate various types of algorithms for applications. The integration should be done with the least amount possible of design in the software application (modularity). Various classes are created that implement the same interface (IAlgorithmAttribution). The implementation of each method *Attribution(Event)* will be different. 
+
+![Algorithm Attribution class diagram](.images/algorithmattribution.png)
+
+
 
 [Back to top](#software-introduction)
 
