@@ -24,12 +24,14 @@
     - [Pure Fabrication principle](#pure-fabrication-principle)
     - [Protected Variations principle](#protected-variations-principle)
   - [What is Modularity?](#what-is-modularity)
+  - [What is extension, implementation and association (and how to represent in UML)?](#what-is-extension-implementation-and-association-and-how-to-represent-in-uml)
+  - [What is Aggregation and Composition?](#what-is-aggregation-and-composition)
 - [Sources](#sources)
 - [References](#references)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
-
+---
 
 ## What are some considerations to have with software?
 
@@ -280,21 +282,50 @@ A class with **low coupling** is:
 
 **Solution**: Give responsability in a way that keeps coupling low.
 
-In a OO programming language there can be the following kinds of connections:
+In a OO programming language there can be the following kinds of connections types:
+
 - *TypeX* has an association (e.g. reference) with and instance *TypeY*;
 - *TypeX* has a method that references an instance *TypeY*;
 - *TypeX* calls services of an object *TypeY*;
 - *TypeX* is a subclass, directly or indirectly, of *TypeY*;
 - *TypeX* implements and interface *TypeY*.
 
-**PP page 15**
+1. **Association with instance *TypeY***
+
+![Association with instance TypeY](images/associationwithinstancetypey.png)
+
+2. **Method references instance *TypeY***
+   
+![Method makes reference instance typeY](images/methodreferencesinstancetypey.png)
+
+3. ***TypeX* calls services of object *TypeY***
+
+![Method calls service of object TypeY](images/typexcallsserviceobjecttypey.png)
+
+4. ***TypeX* is a subclass of *TypeY***
+
+![TypeX subcalss TypeY](images/typexsubclasstypeY.png)
+
+The class inherits the properties of the superclass. The instances of the subclass are part of the superclass but not the other way around.
+
+5. ***TypeX* implements interface *TypeY***
+
+![TypeX implements interface TypeY](images/typeximplementsinterfacetypey.png)
+
+Establishes a contract between the class and the code that uses it. 
+- The interface describes what a class the implements the interface can do.
+- Mechanism A has to implement method *attribui(Evento)*.
+
+**Interface vs class**
+
+![interface vs class](images/classvsinterface.png)
+
+The use of *Interface* implies **lower coupling**.
 
 
 [Back to top](#software-introduction)
 
 ### High Coesion principle
-
-**Problem**: How to keep object with cohere functionalities and easy to comprehend? 
 
 *Cohesion* is a measure for the responsability given to an element. A highly cohese class usually had a restrict number of operations and cooperate or delegate with other classes to solve more complex tasks.
 
@@ -310,12 +341,24 @@ A class with **high cohesion** is:
 - Low coupling is suported;
 - Reuse if favored because high cohesion allows for reuse of a very specific functionality.
 
+**Problem**: How to keep object with cohere functionalities and easy to comprehend? 
+
 **Solution**: Give responsability in a way that cohesion and cooperation between functionalities is high. Delegate responsabilities.
 
 
 [Back to top](#software-introduction)
 
 ### Polymorphism principle
+
+Polymorphism is a a principle that states how a system should be organized to treat variations of a similar behaviour. 
+
+e.g. Add a new classe *Mechanism* will have less impact in the software design than implementing the algorithms in a single class. Some of the advantages of this are:
+
+- Easier to add new variations
+- New implementations can be added without addecting the clients
+
+![mechanism](images/polymorphismmechanism.png)
+
 
 **Problem**: How to use alternatives based on type (classes)? How to build replaceable software components?
 
@@ -325,58 +368,9 @@ e.g. How to support multiple algorithms for applications? The application should
 
 ![Algorithm Attribution class diagram](images/algorithmattribution.png)
 
-**Code**
 
-```
-public static void main(String[] args)
-{
-// ...
-PintaObjeto(objeto);
-//...
-}
-private void PintaObjeto(Objeto o) {
-if (o instanceof Carro)
-{
-PintaCarro((Carro) o);
-} else if (o instanceof Mesa)
-{
-PintaMesa((Mesa) o);
-}
-}
-private void PintaCarro(Carro o) {
-//...
-}
-private void PintaMesa(Mesa m) {
-//...
-}
-```
 
-```
-public static void main(String[] args) {
-Mesa m = new Mesa();
-Pinta(m);
-Carro c = new Carro();
-Pinta(c);
-}
-private void Pinta(Pintável p) {
-p.pinta();
-}
-interface Pintável {
-public void pinta();
-}
-class Carro implements Pintável {
-public void pinta() {
-// ...
-}
-}
-class Mesa implements Pintável {
-public void pinta() {
-//...
-}
-}
-```
 
-**pag 27!!!!**
 
 
 [Back to top](#software-introduction)
@@ -397,8 +391,6 @@ An example to illustrate the need for a *pure fabrication*:
 In an exhibition app, what class should be responsible for saving data of an exhibition? According to *information expert* pattern the *Exhibition* class should be responsible because it contains all the necessary information to be saved. However... Putting that responsability under the Exhibition class would lead to a *higher coupling* between classes and lower the chaces of reuse because persistency would be tied to the *Exhibition* class.
 
 The solution to this problem is to decouple the persistency from the *Exhibition* class and create a class that has the responsability to save objects *PersistentStorage*.
-
-
 
 [Back to top](#software-introduction)
 
@@ -433,6 +425,63 @@ e.g. car vs tire
 - *Fragility*: When changes are made it is difficult to antecipate behaviour.
 - *Immutability*: It is hard to reuse for another application because it is too dependent of the original app.
 
+
+[Back to top](#software-introduction)
+
+---
+
+## What is extension, implementation and association (and how to represent in UML)?
+
+**Expandir esta secção com mais informação!!!**
+
+**Extension**
+
+![Extension](images/extends.png)
+
+**Implementation**
+
+![Extension](images/implements.png)
+
+**Association**
+
+![Extension](images/associates.png)
+
+
+It is best to use **Interfaces instead of Classes!**
+
+e.g. with *Empresa*
+
+![Extension](images/empresa.png)
+
+[Back to top](#software-introduction)
+
+## What is Aggregation and Composition?
+
+Aggregation and composition are subtypes of *Type1 association* (see [Low Coupling principle](#low-coupling-principle)). 
+
+When no subtype is defined, it should be considered *Type1*, subtype *aggregation*.
+
+![Aggregation](images/aggregation.png)
+
+*Composition* means that the instances contained in a collection are erased or removed if the instance that contains the collections is erased or removed.
+
+![Aggregation](images/composition.png)
+
+**Example Aggregations vs Composition**
+
+*CP* has various *ticket inspector*. When *CP* is removed, each *ticket inspector* should be removed. **This is composition**.
+
+![Aggregation](images/examplecomposition.png)
+
+*Admin* creates multiple *Event*. When *Admin* is removed, ech on of those *Event* should not be removed because the *Company* organizes multiple *Event*. **This is aggregation**.
+
+![Aggregation](images/exampleaggregation.png)
+
+**Subclasses and Coupling**
+
+Subclasses are heavily dependent of their superclass. Usually, high coupling of very stable and used elements is not a problem (e.g. java native libraries)
+
+**Pag 47**
 
 
 [Back to top](#software-introduction)
