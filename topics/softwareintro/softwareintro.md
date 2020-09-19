@@ -2,7 +2,7 @@
 
 # Software Introduction
 
-  * [What are some considerations to have with software?](#what-are-some-considerations-to-have-with-software-)
+    * [What are some considerations to have with software?](#what-are-some-considerations-to-have-with-software-)
   * [What are the phases of software development?](#what-are-the-phases-of-software-development-)
   * [How to assess requirements?](#how-to-assess-requirements-)
   * [What is OO Analisys?](#what-is-oo-analisys-)
@@ -29,6 +29,7 @@
 - [References](#references)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 
 ---
