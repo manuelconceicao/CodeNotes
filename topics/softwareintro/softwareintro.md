@@ -11,8 +11,8 @@
   * [How to identify associations?](#how-to-identify-associations)
   * [How to identify attributes?](#how-to-identify-attributes)
   * [What is OO Design?](#what-is-oo-design)
-  * [What is Responsability-Driven Design (RDD)?](#what-is-responsability-driven-design--rdd-)
-  * [What is General Responsability Assignment Software Patterns (GRASP) ?](#what-is-general-responsability-assignment-software-patterns--grasp--)
+  * [What is Responsability-Driven Design (RDD)?](#what-is-responsability-driven-design--rdd)
+  * [What is General Responsability Assignment Software Patterns (GRASP) ?](#what-is-general-responsability-assignment-software-patterns--grasp)
     + [Information expert principle](#information-expert-principle)
     + [Creator principle](#creator-principle)
     + [Controller principle](#controller-principle)
@@ -23,7 +23,7 @@
     + [Pure Fabrication principle](#pure-fabrication-principle)
     + [Protected Variations principle](#protected-variations-principle)
   * [What is Modularity?](#what-is-modularity)
-  * [What is extension, implementation and association (and how to represent in UML)?](#what-is-extension--implementation-and-association--and-how-to-represent-in-uml-)
+  * [What is extension, implementation and association (and how to represent in UML)?](#what-is-extension--implementation-and-association--and-how-to-represent-in-uml)
   * [What is Aggregation and Composition?](#what-is-aggregation-and-composition)
 - [Sources](#sources)
 - [References](#references)
@@ -283,9 +283,9 @@ A class with **low coupling** is:
 
 **Solution**: Give responsability in a way that keeps coupling low.
 
-In a OO programming language there can be the following kinds of connections types:
+In a OO programming language there can be the following kinds of associations types:
 
-- *TypeX* has an association (e.g. reference) with and instance *TypeY*;
+- *TypeX* has an association (e.g. reference) with an instance *TypeY*;
 - *TypeX* has a method that references an instance *TypeY*;
 - *TypeX* calls services of an object *TypeY*;
 - *TypeX* is a subclass, directly or indirectly, of *TypeY*;
