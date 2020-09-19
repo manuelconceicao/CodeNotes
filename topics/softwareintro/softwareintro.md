@@ -540,6 +540,8 @@ Solution: Program for Interface and not for Implementation.
 
 **Modern view**: “behaves as a”:
 - Herança de interface, i.e. implements
+
+**PP3!!! Se calhar não vale a pena ver. Só tem coisas de scrum e waterfall.**
   
 [Back to top](#software-introduction)
 
