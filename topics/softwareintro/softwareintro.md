@@ -2,10 +2,10 @@
 
 # Software Introduction
 
-  * [What are some considerations to have with software?](#what-are-some-considerations-to-have-with-software-)
+  * [What are some considerations to have with software?](#what-are-some-considerations-to-have-with-software)
   * [What are the phases of software development?](#what-are-the-phases-of-software-development-)
   * [How to assess requirements?](#how-to-assess-requirements-)
-  * [What is OO Analisys?](#what-is-oo-analisys-)
+  * [What is OO Analisys?](#what-is-oo-analisys)
   * [What is Domain Model?](#what-is-domain-model-)
   * [How to identify conceptual classes?](#how-to-identify-conceptual-classes-)
   * [How to identify associations?](#how-to-identify-associations-)
