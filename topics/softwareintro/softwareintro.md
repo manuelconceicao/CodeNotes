@@ -481,7 +481,7 @@ When no subtype is defined, it should be considered *Type1*, subtype *aggregatio
 
 Subclasses are heavily dependent of their superclass. Usually, high coupling of very stable and used elements is not a problem (e.g. java native libraries)
 
-**Pag 47**
+
 
 
 [Back to top](#software-introduction)
