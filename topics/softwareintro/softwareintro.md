@@ -370,10 +370,6 @@ e.g. How to support multiple algorithms for applications? The application should
 ![Algorithm Attribution class diagram](images/algorithmattribution.png)
 
 
-
-
-
-
 [Back to top](#software-introduction)
 
 ### Indirection principle
@@ -487,6 +483,66 @@ Subclasses are heavily dependent of their superclass. Usually, high coupling of 
 
 [Back to top](#software-introduction)
 
+
+## UML
+
+**Arrows**
+
+![UML arrows](images/arrowsclassdiagram.png)
+
+[Back to top](#software-introduction)
+
+### Class Diagram
+
+[Back to top](#software-introduction)
+
+
+## Anti-pattern STUPID
+
+**S** - Singleton : One  instance per class (global state).
+
+**T** - Tight Coupling : Too dependent
+
+**U** - Untestability : Not possible to test (that makes it unreliable)
+
+**P** - Premature Optimization : Trying to optimize too early. Get it working first!
+
+**I** - Indiscriptive Naming : Unrelated naming
+
+**D** - Duplication : Repeated code over the system (related to DRY principle)
+
+## SOLID
+
+**S** - Single Responsability Principle (SRP) : Each module, classe or function should have one single responsability attributed (High Cohesion). If a class has more than one responsability then the responsabilities are coupled e.g. User vs Author/Organizor. 
+Solution: Use Composition & 
+Inheritance (interface)
+
+**O** - Open/Closed Principle (OCP) : *Open for Extension, Closed for modification.*
+*If the code works, don't change, extend it!* It is equivalent to *Protected Variation*. e.g. Distribution mechanisms. 
+Solution: Inheritance (interface).
+
+**L** - Liskov Substitution Principle (LSP) : *Functions that use pointers to base classes must be able to use objects of derived classes without knowing it*.
+*Square* class is not *Rectangle* class even if both have methods *setWidth(x)* and *setHeight(y)*. The behaviour of a square is not the same behaviour of a rectangle. Extrinsic behaviour should also be accountable, not just intrinsic behaviour.
+
+**I** - Interface Segregation Principle (ISP) : Multiple interfaces per client are better than one single "fat" interface (these are not cohesive). Combine Single Responsability Responsability with Polymorphism and High Cohesion. Separate a "fat" interface into various single interfaces for each client. 
+
+**D** - Dependency Inversion Principle (DIP) : Abstractions should not depend on details. Details should depend on abstractions. Methods should not use classes, they should use interfaces. 
+Solution: Program for Interface and not for Implementation.
+
+![Program for interface not implementation](images/interfacenotimplementation.png)
+
+[Back to top](#software-introduction)
+
+## CLASSIC VIEW VS MODERN VIEW
+
+**Classic view**: “(conceptually) is-a”:
+- Herança de implementação, i.e. extends
+
+**Modern view**: “behaves as a”:
+- Herança de interface, i.e. implements
+  
+[Back to top](#software-introduction)
+
 ---
 
 # Sources
@@ -509,6 +565,9 @@ White Paper; TP026B, Ver 11/01.
 - Rational Unified Process:
 http://www.ts.mah.se/RUP/RationalUnifiedProce
 ss/index.htm
+
+- Applying UML and Patterns; Craig Larman; (2nd
+ed.); 2002.
 
 - Applying UML and Patterns; Craig Larman; (2nd
 ed.); 2002.
