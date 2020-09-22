@@ -138,7 +138,7 @@ e.g.:
 *Common types*: boolean, date, number, string, text, time.
 *Other types*: address, color, geometry, phone number, ID.
 
-Attribute should be represented as a conceptual class *IF*:
+Attribute should be represented as a conceptual class if:
 - Attribute is made of various concepts: (e.g. Address: Street, number, country);
 - Has associated operation (e.g. Parsing);
 - Has other attributes;
@@ -176,9 +176,9 @@ Other principles like **GRASP**, **SOLID** and **GoF** should be used during the
 
 Responsability-Driven Design is principle that helps in the process of software design. This principle states that **objects have responsabilities** - responsabilities being and abstraction of what they do, in similarity to real life object (e.g. A person talks and walks). Responsabilities are obligations and behaviours of an object in the part they are given. It is simply thinking of objects in the same way we think of a person with responsabilities colaborating with other people colaborating with each other, with different responsabilities.
 
-*Note*: Responsability is no the same thing as a method. It is simply an abstraction. Methods implement responsabilities. 
+*Note*: Responsability is not the same thing as a method. It is simply an abstraction. Methods implement responsabilities. 
 
-An object can have the responsability to:
+An object can have the responsability:
 - **To Know**: Know its private information, related objects, know how to obtain or calculate a new information.
 - **To Do**: To do something, criate an object, do calculations, initiate actions in other objects, control and coordenate activities in other objects.
 
@@ -215,7 +215,7 @@ e.g. Exhibition responsability:
 
 ### Creator principle
 
-**Problem**: Who should be responsible for creating object os a class?
+**Problem**: Who should be responsible for creating object or a class?
 
 **Solution**: Class *B* should have the responsability to create instances of class *A* in the following situations:
 
@@ -551,6 +551,7 @@ Solution: Program for Interface and not for Implementation.
 
 - PP ESOFT 2015-2016 Requisitos, analise e design (Switch)
 - PP ESOFT 2016-2017 Design OO (T) IT2 (Switch)
+- PP ESOFT 2015-2016 Processo de Desenvolvimento de Software (Switch)
 
 [Back to top](#software-introduction)
 
