@@ -374,6 +374,26 @@ e.g. How to support multiple algorithms for applications? The application should
 
 ### Indirection principle
 
+**Problem**: Where to assign a responsibility to avoid direct coupling between two or more things?
+
+For better understanding where we can use this pattern, let's imagine the following situation. We have a system for booking people at an event. The client can choose from many employees due to their specialization and add them to their project. In this case, we need to set each employee as booked for the specified date, we must also inform the project that new people have been added to it, and finally update the fee the client will pay. 
+
+![Indirection](images/indirection.png)
+
+As you can see, in this case, the Employee component needs to call and know about the Project component so that it can update the information about booked employees. In addition, there would be another binding between the project and client charges. We want these three components to be independent, so this solution is not good for us.
+
+So what we need? A new component that will be kind of orchestrator for others. It will determine the order of operations. We can use some of these design patterns to introduce it:
+
+- bridge
+- facade
+- adapter
+- mediator
+
+Why? Because we need an object that will be responsible for communication between all modules. This way the components will know nothing about each other. In addition, there will be no problems to find out which component is looking at which one, because none is looking at any.
+
+Here is a result of introducing mediator to our code:
+![Indirection](images/indirection2.png)
+
 
 [Back to top](#software-introduction)
 
@@ -552,6 +572,7 @@ Solution: Program for Interface and not for Implementation.
 - PP ESOFT 2015-2016 Requisitos, analise e design (Switch)
 - PP ESOFT 2016-2017 Design OO (T) IT2 (Switch)
 - PP ESOFT 2015-2016 Processo de Desenvolvimento de Software (Switch)
+- https://dev.to/mgce/do-you-know-grasp-part-2-indirection-and-information-expert-51i4
 
 [Back to top](#software-introduction)
 
@@ -574,6 +595,7 @@ ed.); 2002.
 
 - Applying UML and Patterns; Craig Larman; (2nd
 ed.); 2002.
+
 
 [Back to top](#software-introduction)
 
