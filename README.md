@@ -19,7 +19,7 @@ Switch content and others.
 
 
 **Quality Assurance**
-- [Quality Assurance](/topics/softwareintro/QualityAssurance study.md)
+- [Quality Assurance](/topics/qualityassurance/qualityassurance.md)
 
 
 
