@@ -18,6 +18,11 @@ Switch content and others.
 
 
 
+**Quality Assurance**
+- [Quality Assurance](/topics/softwareintro/QualityAssurance study.md)
+
+
+
 **Front End**
 
 
