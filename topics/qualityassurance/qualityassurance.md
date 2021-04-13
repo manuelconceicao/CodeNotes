@@ -1,18 +1,20 @@
 # Quality assurance
 
-# What is QA (Quality Assurance)?
+# What is QA (Quality Assurance) and what QA engineer does?
 
 ![Quality Assurance](img/what-is-SQA-2.jpg)
 
 - Quality assurance is optimizing the development and testing processes
 - Selecting approaches to minimize the number of errors
+- Bring quality to the product
+- Make sure the requirements are met.
+- Know the business
+- Know the product
 
-# What a QA engineer does?
 
-**What I think software testing is**:
-Software testing main objective is making sure the software fulfills the requirements proposed. A software tester should make sure all the functionalities of the software goes in hand with the requirements and suggest new requirements to the development team and stakeholders to further enhance the software. They should work in iterations to provide constant feedback to the other development teams to correct how the software is being developed. 
 
-**What software testing is:**
+
+# What is software testing?
 - Making sure the requirements are sound.
 - Think about what the software should do.
 - Think about the UX (User Experience)
@@ -20,7 +22,7 @@ Software testing main objective is making sure the software fulfills the require
 | What software testing is | What software testing is not |
 | ------------------------ | ---------------------------- |
 | Making sure the software provides the expected value to the user.  Try to get information about the business and software that might provide value to the stakeholders. | Simple, quick, predictable. Only making sure the  software matches the description. |
-| Mitigating surprises before problems happen | Increasing quaity |
+| Mitigating surprises before problems happen | Increasing quality |
 | Exploring products | Well understood and valued by everyone |
 | Communicating with stakeholders (costumers, users, developers) and work with together to improve the product | A phase that a product needs to go through to be successful |
 | Infinite. All testing is sampling and there are various ways and parameters that can be tested | Ever finishing. There are an infinite number of ways to test a product |
@@ -39,7 +41,6 @@ Software testing main objective is making sure the software fulfills the require
 
 # How to test software (in abstract)?
 
-**Answer:**
 - Automatic tests
 	- Unitary tests
 	- End to end tests
@@ -62,6 +63,7 @@ Software testing main objective is making sure the software fulfills the require
 - Performance testing
 
 # Quality Assurance vs Quality Control?
+
  **QA**
  - Based on processes
  - Builds quality in
@@ -76,9 +78,6 @@ Software testing main objective is making sure the software fulfills the require
 - Based on inspection
 - Takes defect out
 - After it is developed
-
-
-# What is the difference between QA and software testing (QC mainly)?
 
 | QA | Testing |
 | :---: | :---------: |
@@ -116,7 +115,6 @@ In Agile projects are completed in a continuous work fashion by setting requirem
 
 Agile is a set of working Values. It is an iterative way to manage a project and software development where a team delivers a product in small increments instead of one big deliver.
 
-
 # How does QA team work in an Agile environment?
 
 1. Planning
@@ -126,8 +124,6 @@ Agile is a set of working Values. It is an iterative way to manage a project and
 5. Continuous improvement
 
 QA team always look to improve the process of work each iteration to improve the quality of the product and the value it can bring to the client.
-
-
 
 # What is Scrum?
 
